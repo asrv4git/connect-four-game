@@ -21,6 +21,8 @@ public class GameData {
     @Column(name = "game_status")
     GameStatus gameStatus;
 
+    @Column(name = "moves_played")
+    String movesPlayed;
     @Embedded
     @Column(name = "board")
     Board board;

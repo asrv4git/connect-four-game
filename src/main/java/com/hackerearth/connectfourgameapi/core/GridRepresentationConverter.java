@@ -1,7 +1,7 @@
 package com.hackerearth.connectfourgameapi.core;
 
 public class GridRepresentationConverter {
-    private static final int WIDTH = 7, HEIGHT = 8;
+    private static final int WIDTH = 7, HEIGHT = 6;
 
     public static char[][] stringToTwoDimensionalCharArray(String str){
         char[][] grid = new char[HEIGHT][WIDTH];

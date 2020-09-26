@@ -19,12 +19,13 @@ public class ApiErrorController {
     //used to throw exceptions from anywhere
     @ExceptionHandler(ResponseStatusException.class)
     public ResponseEntity<ErrorObject> handleResponseStatusException(ResponseStatusException ex) {
+        log.error(ex.getMessage());
         ErrorObject errorObject = new ErrorObject(ex.getStatus().value(), ex.getMessage());
         return ResponseEntity.accepted().body(errorObject);
     }
     //catch any exception
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorObject> handleEntityNotFound(Exception ex) {
+    public ResponseEntity<ErrorObject> handleAnyException(Exception ex) {
         log.error(ex.getMessage());
         ErrorObject errorObject = new ErrorObject(HttpStatus.NOT_FOUND.value(), ex.getMessage());
         return new ResponseEntity(errorObject, HttpStatus.NOT_FOUND);

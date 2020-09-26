@@ -8,7 +8,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 public class GameEngine {
     // dimensions for our board
-    private static final int WIDTH = 7, HEIGHT = 8;
+    private static final int WIDTH = 7, HEIGHT = 6;
 
     private static char[][] grid;
     private static int lastTop;
@@ -32,6 +32,7 @@ public class GameEngine {
             // we ask user to choose a column
             chooseAndDrop(symbol, columnNumber);
 
+            System.out.println(GridRepresentationConverter.TwoDimensionalCharArrayToString(grid));
             // we need to check if a player won. If not, 
             // we continue, otherwise, we display a message
             if (isWinningPlay()) {

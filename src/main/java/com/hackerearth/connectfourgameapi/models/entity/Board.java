@@ -11,7 +11,7 @@ import javax.persistence.Id;
 public class Board {
 
     // dimensions for our board
-    private static final int WIDTH=7, HEIGHT=8;
+    private static final int WIDTH=7, HEIGHT=6;
 
     @Id
     @Column(name = "player_id")
@@ -45,10 +45,10 @@ public class Board {
     }
 
     private static String initializeGrid() {
-        char[][] grid = new char[WIDTH][HEIGHT];
+        char[][] grid = new char[HEIGHT][WIDTH];
         for (int row = 0; row < grid.length; row++) {
             for (int col = 0; col < grid[0].length; col++) {
-                grid[row][col] = ' ';
+                grid[row][col] = '.';
             }
         }
         StringBuilder sb = new StringBuilder();
